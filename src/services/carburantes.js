@@ -38,10 +38,12 @@ export function prettify(text = '') {
     .split(' ')
     .map((word, i) => {
       if (UPPERCASE_WORDS.has(word)) return word.toUpperCase();
+      if (word === 's/n' || word === 's/n,') return word;
       if (i > 0 && LOWERCASE_WORDS.has(word)) return word;
       return word.replace(/\p{L}/u, (c) => c.toUpperCase());
     })
-    .join(' ');
+    .join(' ')
+    .replace(/[\s,]+$/, '');
 }
 
 /** "Palmas de Gran Canaria (Las)" -> "Las Palmas de Gran Canaria" */
