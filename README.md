@@ -5,6 +5,9 @@ la gasolinera **más barata** y la **más cercana**, con datos oficiales del Min
 
 React 19 + Vite, CSS3 puro (sin frameworks CSS) y Leaflet para el mapa. No necesita backend ni API keys.
 
+**Web publicada:** https://cnfnavarro.github.io/Repostea/ — cada push a `main` se despliega solo en GitHub Pages
+(`.github/workflows/deploy.yml`).
+
 ## Arrancar
 
 ```bash

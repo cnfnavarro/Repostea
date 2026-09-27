@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <a href="/" className="brand" aria-label="Repostea, ir al inicio">
+        <a href={import.meta.env.BASE_URL} className="brand" aria-label="Repostea, ir al inicio">
           <span className="brand__logo">
             <IconPump />
           </span>
