@@ -8,6 +8,8 @@ React 19 + Vite, CSS3 puro (sin frameworks CSS) y Leaflet para el mapa. No neces
 **Web publicada:** https://cnfnavarro.github.io/Repostea/ — cada push a `main` se despliega solo en GitHub Pages
 (`.github/workflows/deploy.yml`).
 
+[![Resultados de Repostea para el código postal 28013 (Madrid): la más barata, la más cercana, precio medio, lista de gasolineras y mapa con precios](docs/captura.png)](https://cnfnavarro.github.io/Repostea/)
+
 ## Arrancar
 
 ```bash
