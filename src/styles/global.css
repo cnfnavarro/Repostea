@@ -1,0 +1,465 @@
+/* =========================================================
+   Repostea · sistema de diseño
+   Paleta: verde petróleo + ámbar sobre crema cálido
+   Tipografía: Fraunces (títulos y precios) + DM Sans (texto)
+   ========================================================= */
+:root {
+  color-scheme: light dark;
+
+  /* Superficies y texto */
+  --color-bg: #f6f2ea;
+  --color-bg-soft: #efe9dd;
+  --color-surface: #fffdf8;
+  --color-surface-2: #faf6ee;
+  --color-text: #1b2928;
+  --color-text-muted: #5b6a67;
+  --color-text-faint: #8c9895;
+  --color-border: #e5ddcd;
+  --color-border-strong: #d3c9b5;
+
+  /* Marca */
+  --color-primary: #1f5c57;
+  --color-primary-light: #2b7a72;
+  --color-primary-dark: #133f3b;
+  --color-primary-strong: #1f5c57;
+  --color-primary-soft: #dcebe6;
+  --color-primary-ring: rgba(31, 92, 87, 0.2);
+  --color-primary-shadow: rgba(31, 92, 87, 0.45);
+  --color-on-primary: #fdfbf6;
+
+  --color-accent: #e8a13a;
+  --color-accent-strong: #c47f1a;
+  --color-accent-soft: #fcf0dc;
+  --color-accent-border: #f3d6a4;
+  --color-accent-ink: #6e430a;
+  --color-on-accent: #2e1d04;
+
+  /* Niveles de precio */
+  --color-low: #2f8a55;
+  --color-low-soft: #e0f1e5;
+  --color-low-ink: #1f6b40;
+  --color-low-ring: rgba(47, 138, 85, 0.45);
+  --color-mid: #e0a032;
+  --color-mid-soft: #fbefd6;
+  --color-mid-ink: #8a5608;
+  --color-high: #c9502f;
+  --color-high-soft: #f9e2da;
+  --color-high-ink: #a33c22;
+
+  --color-focus: #2b7a72;
+
+  /* Tarjeta "la más barata" */
+  --best-bg-1: #1f5c57;
+  --best-bg-2: #102f2c;
+  --best-text: #f7f4ec;
+  --best-muted: rgba(247, 244, 236, 0.72);
+  --best-label: #ffcf7d;
+  --best-glow: rgba(232, 161, 58, 0.38);
+  --best-note-bg: rgba(255, 255, 255, 0.09);
+
+  /* Fondo decorativo */
+  --glow-amber: rgba(232, 161, 58, 0.2);
+  --glow-teal: rgba(31, 92, 87, 0.13);
+
+  /* Tipografía */
+  --font-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-body: 'DM Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radios, sombras y transiciones */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgba(45, 35, 15, 0.05), 0 2px 6px rgba(45, 35, 15, 0.05);
+  --shadow-md: 0 8px 24px -10px rgba(45, 35, 15, 0.2);
+  --shadow-lg: 0 24px 60px -20px rgba(20, 45, 42, 0.3);
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+
+  --container: 1200px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0e1615;
+    --color-bg-soft: #16211f;
+    --color-surface: #182422;
+    --color-surface-2: #131d1c;
+    --color-text: #e8eeea;
+    --color-text-muted: #a1b1ad;
+    --color-text-faint: #718380;
+    --color-border: #283836;
+    --color-border-strong: #364845;
+
+    --color-primary: #6cc0b5;
+    --color-primary-light: #8fd3c9;
+    --color-primary-dark: #1f5c57;
+    --color-primary-strong: #8fd3c9;
+    --color-primary-soft: rgba(108, 192, 181, 0.14);
+    --color-primary-ring: rgba(108, 192, 181, 0.28);
+    --color-primary-shadow: rgba(0, 0, 0, 0.5);
+    --color-on-primary: #0b1a18;
+
+    --color-accent: #f0b04f;
+    --color-accent-strong: #f0b04f;
+    --color-accent-soft: rgba(240, 176, 79, 0.12);
+    --color-accent-border: rgba(240, 176, 79, 0.3);
+    --color-accent-ink: #f7c878;
+    --color-on-accent: #2a1a03;
+
+    --color-low: #5cc98a;
+    --color-low-soft: rgba(92, 201, 138, 0.14);
+    --color-low-ink: #86dca9;
+    --color-low-ring: rgba(92, 201, 138, 0.45);
+    --color-mid: #f0b04f;
+    --color-mid-soft: rgba(240, 176, 79, 0.14);
+    --color-mid-ink: #f5c77d;
+    --color-high: #ef8062;
+    --color-high-soft: rgba(239, 128, 98, 0.14);
+    --color-high-ink: #f5a58f;
+
+    --color-focus: #8fd3c9;
+
+    --best-bg-1: #1d5752;
+    --best-bg-2: #0f2724;
+    --best-glow: rgba(240, 176, 79, 0.28);
+
+    --glow-amber: rgba(240, 176, 79, 0.08);
+    --glow-teal: rgba(108, 192, 181, 0.08);
+
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 8px 24px -10px rgba(0, 0, 0, 0.6);
+    --shadow-lg: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+input {
+  color: inherit;
+  font: inherit;
+}
+
+fieldset {
+  min-width: 0;
+  border: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-optical-sizing: auto;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Utilidades ---------- */
+.container {
+  width: min(100% - 2rem, var(--container));
+  margin-inline: auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.eyebrow {
+  color: var(--color-primary-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 600px) {
+  .container {
+    width: min(100% - 3rem, var(--container));
+  }
+}
+
+/* ---------- Botones ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.75rem 1.3rem;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.btn svg {
+  flex-shrink: 0;
+  width: 1.15em;
+  height: 1.15em;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: progress;
+}
+
+.btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 8px 18px -8px var(--color-primary-shadow);
+}
+
+.btn--primary:hover:not(:disabled) {
+  background: var(--color-primary-light);
+}
+
+.btn--accent {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+  box-shadow: 0 8px 18px -8px rgba(232, 161, 58, 0.6);
+}
+
+.btn--soft {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+}
+
+.btn--outline {
+  border: 1.5px solid var(--color-border-strong);
+  background: var(--color-surface);
+}
+
+.btn--outline:hover:not(:disabled) {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--on-dark {
+  border: 1.5px solid rgba(255, 255, 255, 0.28);
+  color: var(--best-text);
+}
+
+.btn--on-dark:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.spinner {
+  width: 1.1em;
+  height: 1.1em;
+  border: 2.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---------- Alertas ---------- */
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  background: var(--color-high-soft);
+  color: var(--color-high-ink);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.alert svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+}
+
+/* ---------- Grupos de píldoras (combustible, distancia) ---------- */
+.chip-group__legend {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.chip-group__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.55rem 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    color var(--transition-fast),
+    box-shadow var(--transition-fast);
+}
+
+.chip input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.chip:hover {
+  border-color: var(--color-primary-light);
+}
+
+.chip:has(input:checked) {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  box-shadow: 0 6px 14px -8px var(--color-primary-shadow);
+}
+
+.chip:has(input:focus-visible) {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.chip--sm {
+  min-height: 38px;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.88rem;
+}
+
+/* Color de la manguera: verde gasolina, negro diésel, azul GLP */
+.fuel-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--dot);
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+.fuel-dot--g95 {
+  --dot: #3fa663;
+}
+
+.fuel-dot--g98 {
+  --dot: #1c6b3e;
+}
+
+.fuel-dot--diesel {
+  --dot: #26302e;
+}
+
+.fuel-dot--dieselPremium {
+  --dot: #6d5bb8;
+}
+
+.fuel-dot--glp {
+  --dot: #3a86c8;
+}
+
+@media (prefers-color-scheme: dark) {
+  .fuel-dot--diesel {
+    --dot: #d5dcda;
+  }
+}

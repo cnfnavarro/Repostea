@@ -1,0 +1,70 @@
+.how {
+  padding: 2rem 0 4.5rem;
+}
+
+.how__title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.7rem, 4vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.how__title em {
+  color: var(--color-primary-strong);
+  font-weight: 500;
+}
+
+.how__steps {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  counter-reset: step;
+}
+
+.how__step {
+  padding: 1.6rem 1.5rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.how__step:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.how__num {
+  display: block;
+  color: var(--color-accent-strong);
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.how__step-title {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.how__step-text {
+  margin-top: 0.35rem;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 760px) {
+  .how {
+    padding-top: 3rem;
+  }
+
+  .how__steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}

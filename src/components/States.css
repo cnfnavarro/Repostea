@@ -1,0 +1,79 @@
+.skeleton-group {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.skeleton {
+  border-radius: var(--radius-lg);
+  background: linear-gradient(
+    100deg,
+    var(--color-bg-soft) 30%,
+    var(--color-surface) 50%,
+    var(--color-bg-soft) 70%
+  );
+  background-size: 300% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+.skeleton--hl {
+  height: 250px;
+  border-radius: var(--radius-xl);
+}
+
+.skeleton--card {
+  height: 132px;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 2.5rem 1.5rem;
+  border: 1.5px dashed var(--color-border-strong);
+  border-radius: var(--radius-xl);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.state__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 0.3rem;
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+}
+
+.state__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.state--error .state__icon {
+  background: var(--color-high-soft);
+  color: var(--color-high-ink);
+}
+
+.state__title {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.state__text {
+  max-width: 34ch;
+  margin-bottom: 0.6rem;
+  color: var(--color-text-muted);
+}

@@ -1,0 +1,335 @@
+.station-list__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.station-list__title {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.station-list__title span {
+  color: var(--color-text-faint);
+  font-weight: 500;
+}
+
+.segmented {
+  display: inline-flex;
+  padding: 4px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  background: var(--color-bg-soft);
+}
+
+.segmented button {
+  min-height: 38px;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-full);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.segmented button[aria-pressed='true'] {
+  background: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+}
+
+.station-list__items {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.station-list__more {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+/* ---------- Tarjeta de gasolinera ---------- */
+.station {
+  --level-color: var(--color-low);
+  --level-soft: var(--color-low-soft);
+  --level-ink: var(--color-low-ink);
+
+  position: relative;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas:
+    'rank body side'
+    'foot foot foot';
+  gap: 0.35rem 0.85rem;
+  padding: 1rem 1rem 0.9rem 1.15rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    border-color var(--transition-fast);
+}
+
+.station--mid {
+  --level-color: var(--color-mid);
+  --level-soft: var(--color-mid-soft);
+  --level-ink: var(--color-mid-ink);
+}
+
+.station--high {
+  --level-color: var(--color-high);
+  --level-soft: var(--color-high-soft);
+  --level-ink: var(--color-high-ink);
+}
+
+/* Franja lateral con el color del nivel de precio */
+.station::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: -1.5px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--level-color);
+}
+
+.station:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.station.is-selected {
+  border-color: var(--color-primary);
+  box-shadow:
+    0 0 0 4px var(--color-primary-ring),
+    var(--shadow-md);
+}
+
+.station__rank {
+  grid-area: rank;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--color-bg-soft);
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.station__body {
+  grid-area: body;
+  min-width: 0;
+}
+
+.station__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.35rem;
+}
+
+.tag {
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.tag--best {
+  background: var(--color-low-soft);
+  color: var(--color-low-ink);
+}
+
+.tag--near {
+  background: var(--color-primary-soft);
+  color: var(--color-primary-strong);
+}
+
+.station__brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+.station__address {
+  margin-top: 0.1rem;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.station__others {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.55rem;
+}
+
+.station__others span {
+  padding: 0.12rem 0.5rem;
+  border-radius: 6px;
+  background: var(--color-bg-soft);
+  color: var(--color-text-muted);
+  font-size: 0.76rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.station__others strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.station__side {
+  grid-area: side;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.station__price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.2rem;
+  white-space: nowrap;
+}
+
+.station__price strong {
+  color: var(--level-ink);
+  font-family: var(--font-heading);
+  font-size: 1.7rem;
+  font-weight: 600;
+  font-variant-numeric: lining-nums tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.station__price span {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: var(--radius-full);
+  background: var(--level-soft);
+  color: var(--level-ink);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.level::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.station__foot {
+  grid-area: foot;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem 1rem;
+  margin-top: 0.55rem;
+  padding-top: 0.7rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.station__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  min-width: 0;
+  color: var(--color-text-muted);
+  font-size: 0.84rem;
+}
+
+.station__meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.station__meta li:first-child {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.station__meta svg {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+}
+
+.station__actions {
+  display: flex;
+  gap: 0.45rem;
+  margin-left: auto;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 38px;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-soft);
+  color: var(--color-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.pill-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+.pill-btn:hover {
+  background: var(--color-border);
+}
+
+.pill-btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.pill-btn--primary:hover {
+  background: var(--color-primary-light);
+}
+
+@media (min-width: 600px) {
+  .station {
+    grid-template-areas:
+      'rank body side'
+      'rank foot foot';
+    padding: 1.1rem 1.2rem 1rem 1.25rem;
+  }
+}
